@@ -1,0 +1,17 @@
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/ErrorDetails.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/controller/VotacaoController.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/repository/PautaRepository.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/config/ModelMapperConfig.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/exceptions/BadRequestException.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/dto/PautaDTO.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/model/Pauta.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/ExceptionHandler.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/config/SwaggerConfig.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/exceptions/NotFoundException.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/controller/PautaController.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/exceptions/UnauthorizedException.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/ApiError.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/GerenciadorVotosApiApplication.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/service/PautaService.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/exceptiohandler/exceptions/InternalServerErrorException.java
+/Users/pedrokeppen/develop/Interview/gerenciador-votos-api/src/main/java/com/teste/sicredi/gerenciador/votos/api/service/impl/PautaServiceImpl.java
