@@ -10,4 +10,6 @@ public interface PautaService {
 	Pauta salvar(PautaDTO dto);
 	
 	List<Pauta> listarTodas();
+	
+	Pauta findById(Long idPauta);
 }

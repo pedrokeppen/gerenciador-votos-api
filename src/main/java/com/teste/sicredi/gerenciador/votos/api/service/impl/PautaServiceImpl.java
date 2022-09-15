@@ -1,6 +1,7 @@
 package com.teste.sicredi.gerenciador.votos.api.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -18,10 +19,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class PautaServiceImpl implements PautaService{
 
-	//Algum problema na utilizaçao do ModelMapper, voltar aqui depois
-	//private ModelMapper modelMapper;
-	
-	private PautaRepository repository;
+	private final PautaRepository repository;
 	
 	@Override
 	public Pauta salvar(PautaDTO dto) {
@@ -49,6 +47,17 @@ public class PautaServiceImpl implements PautaService{
 		
 		return pautas;
 		
+	}
+
+	@Override
+	public Pauta findById(Long idPauta) {
+		Optional<Pauta> pauta = this.repository.findById(idPauta);
+		
+		if(!pauta.isPresent()) {
+			throw new NotFoundException("Pauta não encontrada!");
+		}
+		
+		return pauta.get();
 	}
 	
 	
