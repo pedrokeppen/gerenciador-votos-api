@@ -1,5 +1,6 @@
 package com.teste.sicredi.gerenciador.votos.api.service;
 
+import com.teste.sicredi.gerenciador.votos.api.dto.ResultadoVotacaoDTO;
 import com.teste.sicredi.gerenciador.votos.api.dto.VotacaoDTO;
 import com.teste.sicredi.gerenciador.votos.api.dto.VotoDTO;
 import com.teste.sicredi.gerenciador.votos.api.model.Votacao;
@@ -14,5 +15,7 @@ public interface VotacaoService {
 	Votacao findById(Long idVotacao);
 	
 	Voto votar(VotoDTO dto);
+	
+	ResultadoVotacaoDTO exibirResultadoVotacao(Long idVotacao);
 	
 }

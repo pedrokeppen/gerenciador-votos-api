@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.teste.sicredi.gerenciador.votos.api.enums.VotoEnum;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,7 +32,7 @@ public class Voto {
 	private String cpf;
 	
 	@Column(name = "VOTO", nullable = false)
-	private VotoEnum voto;
+	private String voto;
 
 	@OneToOne
 	@JoinColumn(name = "ID_VOTACAO")

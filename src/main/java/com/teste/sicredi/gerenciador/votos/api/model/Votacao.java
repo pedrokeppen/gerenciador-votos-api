@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.teste.sicredi.gerenciador.votos.api.enums.StatusVotacao;
 
 import lombok.AllArgsConstructor;
@@ -39,9 +40,11 @@ public class Votacao {
 	@Column(name = "STATUS", nullable = false)
 	private StatusVotacao status;
 		
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "DT_INICIO", nullable = false)
 	private LocalDateTime dataInicio;
 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "DT_FIM", nullable = false)
 	private LocalDateTime dataFim;
 }

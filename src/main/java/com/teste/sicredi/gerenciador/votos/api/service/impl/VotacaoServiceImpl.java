@@ -5,9 +5,11 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.teste.sicredi.gerenciador.votos.api.dto.ResultadoVotacaoDTO;
 import com.teste.sicredi.gerenciador.votos.api.dto.VotacaoDTO;
 import com.teste.sicredi.gerenciador.votos.api.dto.VotoDTO;
 import com.teste.sicredi.gerenciador.votos.api.enums.StatusVotacao;
+import com.teste.sicredi.gerenciador.votos.api.enums.VotoEnum;
 import com.teste.sicredi.gerenciador.votos.api.exceptiohandler.exceptions.NotFoundException;
 import com.teste.sicredi.gerenciador.votos.api.exceptiohandler.exceptions.UnauthorizedException;
 import com.teste.sicredi.gerenciador.votos.api.model.Pauta;
@@ -99,7 +101,7 @@ public class VotacaoServiceImpl implements VotacaoService {
 		Voto voto = Voto.builder()
 				.cpf(dto.getCpf())
 				.votacao(votacao)
-				.voto(dto.getVoto())
+				.voto(dto.getVoto().name())
 				.build();
 		
 		return this.votoRepository.save(voto);
@@ -113,6 +115,28 @@ public class VotacaoServiceImpl implements VotacaoService {
 				throw new UnauthorizedException("O mesmo usuário nao pode votar duas vezes!");
 			}
 		}
+	}
+
+	@Override
+	public ResultadoVotacaoDTO exibirResultadoVotacao(Long idVotacao) {
+		
+		Votacao votacao = findById(idVotacao);
+		
+		int votosSim = this.votoRepository.countVotosByType(idVotacao, VotoEnum.Sim.name());
+		int votosNao = this.votoRepository.countVotosByType(idVotacao, VotoEnum.Não.name());
+		
+		ResultadoVotacaoDTO dto = ResultadoVotacaoDTO.builder()
+				.dataInicio(votacao.getDataInicio())
+				.dataFim(votacao.getDataFim())
+				.idVotacao(idVotacao)
+				.idPauta(votacao.getPauta().getId())
+				.qtdNao(votosNao)
+				.qtdSim(votosSim)
+				.tituloPauta(votacao.getPauta().getTitulo())
+				.statusVotacao(votacao.getStatus().name())
+				.build();
+		
+		return dto;
 	}
 
 	

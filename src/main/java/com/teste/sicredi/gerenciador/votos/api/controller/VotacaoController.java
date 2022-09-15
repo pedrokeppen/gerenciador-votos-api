@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.teste.sicredi.gerenciador.votos.api.dto.ResultadoVotacaoDTO;
 import com.teste.sicredi.gerenciador.votos.api.dto.VotacaoDTO;
 import com.teste.sicredi.gerenciador.votos.api.dto.VotoDTO;
 import com.teste.sicredi.gerenciador.votos.api.model.Votacao;
@@ -40,11 +41,11 @@ public class VotacaoController {
 	}
 	
 	@GetMapping(value = "/exibir-resultado/{id}")
-	public ResponseEntity<Votacao> listarTodas(@PathVariable("id") Long idVotacao){
+	public ResponseEntity<ResultadoVotacaoDTO> exibirResultado(@PathVariable("id") Long idVotacao){
 		
 		
 		//IMPLEMENTAR AINDA O CALCULO DO RESULTADO DOS VOTOS	
-		Votacao votacao = this.service.findById(idVotacao);
+		ResultadoVotacaoDTO votacao = this.service.exibirResultadoVotacao(idVotacao);
 		
 		return ResponseEntity.ok(votacao);
 	}
